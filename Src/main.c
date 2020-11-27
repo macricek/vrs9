@@ -59,43 +59,19 @@ int main(void)
 
   MX_TIM3_Init();
 
-
-
-
-
-
-
   while (1)
   {
-	/*  if(disp_time > (saved_time + 100))
-	  {
-		  displayNumber(num_to_display);
-	  	  num_to_display -= 0.10;
-	  	  saved_time = disp_time;
-
-	  	  if(num_to_display <= 0)
-	  	  {
-	  		  num_to_display = 100;
-	  	  }
-	  }
-	int l=stlen(pokus);
-
-	for (i=0;i<4;i++){
-
-		setDigit(i);		//plati len pre 4
-
-		akt_pismenko=pokus(i);
-		//radsej by som to urobil kolotocarsky :P
-
-	}*/
 	  posuvanie();
 	  displayNumber(pom);
 	  LL_mDelay(500);
 
 
-	  if(akt==strlen(c2)-3){
+	  if(akt==strlen(c2)-3) //dosli sme na koniec, otoc smer
+	  {
 		  smer=0;
-	  }else if(akt==0){
+	  }
+	  else if(akt==0)		//zaciatok, otoc smer
+	  {
 		  smer=1;
 	  }
 
@@ -111,7 +87,6 @@ int main(void)
 
 
 void posuvanie(){
-	//treba spravit aj opatovne posuvanie
 
 	for (int j=0;j<4;j++){
 

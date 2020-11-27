@@ -261,7 +261,6 @@ void setJ(void){
 }
 void setK(void)
 {
-	// A,,C,E,F,G,
 	LL_GPIO_ResetOutputPin(SEGMENTA_PORT, SEGMENTA_PIN);
 	//LL_GPIO_ResetOutputPin(SEGMENTB_PORT, SEGMENTB_PIN);
 	LL_GPIO_ResetOutputPin(SEGMENTC_PORT, SEGMENTC_PIN);
@@ -406,92 +405,10 @@ void podjebnik(void){
  */
 void displayNumber(char *c)
 {
-	/*
-	uint8_t i = 0;
-
-	if(num < 0) return;
-
-	if(num > 9999)
-	{
-		dDisplayData.digit_num = 4;
-		dDisplayData.negative = 0;
-		dDisplayData.resolution = 0;
-	}
-	else if(num >= 1000)
-	{
-		dDisplayData.digit_num = 4;
-		dDisplayData.resolution = 0;
-
-	    while(num > 1)
-	    {
-	    	dDisplayData.digit[i] = (uint32_t)num % 10;
-	        num = num / 10;
-	        i++;
-	    }
-	}
-	else if(num >= 100)
-	{
-		dDisplayData.digit_num = 3;
-		dDisplayData.resolution = 1;
-
-		num = num * 10;
-
-	    while(num > 1)
-	    {
-	    	dDisplayData.digit[i] = (uint32_t)num % 10;
-	        num = num / 10;
-	        i++;
-	    }
-	}
-	else if(num >= 10)
-	{
-		dDisplayData.digit_num = 2;
-		dDisplayData.resolution = 2;
-
-		num = num * 100;
-
-	    while(num > 1)
-	    {
-	    	dDisplayData.digit[i] = (uint32_t)num % 10;
-	        num = num / 10;
-	        i++;
-	    }
-	}
-	else if(num >= 1)
-	{
-		dDisplayData.digit_num = 1;
-		dDisplayData.resolution = 3;
-
-		num = num * 1000;
-
-	    while(num > 1)
-	    {
-	    	dDisplayData.digit[i] = (uint32_t)num % 10;
-	        num = num / 10;
-	        i++;
-	    }
-	}
-	else if(num >= 0)
-	{
-		dDisplayData.digit_num = 1;
-		dDisplayData.resolution = 3;
-
-		num = num * 1000;
-		dDisplayData.digit[3] = 0;
-
-	    while(num > 1)
-	    {
-	    	dDisplayData.digit[i] = (uint32_t)num % 10;
-	        num = num / 10;
-	        i++;
-	    }
-	}
-	*/
 
 	for (int i=0;i<4;i++){
 		dDisplayData.digit[i] = (uint32_t)c[i];
 	}
-	//updateDisplay();
 
 }
 
@@ -672,14 +589,6 @@ void updateDisplay(void)
 
 		}
 
-
-	/*	if(dDisplayData.resolution == i)
-		{
-			setDecimalPoint();
-		}*/
-
-	//	disp_time_saved = disp_time;
-//		while((disp_time_saved + 2) > disp_time){};
 
 		resetDigits();
 		resetSegments();
