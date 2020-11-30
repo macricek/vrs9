@@ -34,8 +34,8 @@ double num_to_display = 10;
 void posuvanie();
 int akt;
 int smer=1;
-char c1[]="MARKO_CHYLIK_92650";
-char c2[]="JAKUB_LULAK_11111";
+//char c2[]="MARKO_CHYLIK_92650";
+char c2[]="JAKUB_LULAK_94057";
 char pom[4];
 int main(void)
 {
